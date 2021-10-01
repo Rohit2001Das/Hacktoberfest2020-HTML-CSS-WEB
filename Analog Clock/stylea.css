@@ -10,8 +10,15 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg,#2ecc71,#16a085);
+    animation: myanimation 10s infinite;
 }
+@keyframes myanimation {
+    0% {background-color: red;}
+    25%{background-color:yellow;}
+    50%{background-color:green;}
+    75%{background-color:brown;}
+    100% {background-color: red;}
+  }
 .clock{
     position: relative;
     width:80vh;
@@ -19,7 +26,11 @@ body{
     border-radius:250px;
     border:10px solid #111;
     background-color: #fff;
+    transition: transform .2s;
     overflow: hidden;
+}
+.clock:hover {
+    transform: scale(1.1);
 }
 .clock:after{
     content:'';
